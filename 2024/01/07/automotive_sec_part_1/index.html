@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="This document covers the overall content of autonomous vehicles security. We first explore the general security threats and security solutions associated with autonomous vehicle services. Subsequently">
 <meta property="og:type" content="article">
-<meta property="og:title" content="autonomous vehicle security model">
+<meta property="og:title" content="automotive security model">
 <meta property="og:url" content="http://example.com/2024/01/07/automotive_sec_part_1/index.html">
 <meta property="og:site_name" content="rvkhunLab">
 <meta property="og:description" content="This document covers the overall content of autonomous vehicles security. We first explore the general security threats and security solutions associated with autonomous vehicle services. Subsequently">
@@ -18,9 +18,10 @@
 <meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/baad91c4-baa2-4583-b3ab-fba8531dd319">
 <meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/efebce27-f488-4a81-9f20-2956bbbb7363">
 <meta property="article:published_time" content="2024-01-07T09:35:27.000Z">
-<meta property="article:modified_time" content="2024-01-07T09:35:41.763Z">
+<meta property="article:modified_time" content="2024-01-07T09:41:19.784Z">
 <meta property="article:author" content="rvkhun">
-<meta property="article:tag" content="automotive, security">
+<meta property="article:tag" content="automotive">
+<meta property="article:tag" content="security">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/2c4513a9-302b-4274-9598-160193c60a8d">
     
@@ -42,7 +43,7 @@
       
     
     <!-- title -->
-    <title>autonomous vehicle security model</title>
+    <title>automotive security model</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -84,8 +85,6 @@
       <ul>
         
         
-        <li><a class="icon" aria-label="Next post" href="/2023/09/17/test/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
@@ -98,16 +97,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=autonomous vehicle security model"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=autonomous vehicle security model"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=autonomous vehicle security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=autonomous vehicle security model&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=autonomous vehicle security model"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=automotive security model"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=automotive security model"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=automotive security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=automotive security model&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=automotive security model"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -127,7 +126,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        autonomous vehicle security model
+        automotive security model
     </h1>
 
 
@@ -146,11 +145,16 @@
 
 
       
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/automotive/">automotive</a> › <a class="category-link" href="/categories/automotive/security/">security</a>
+    </div>
+
 
       
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/automotive-security/" rel="tag">automotive, security</a>
+        <a class="p-category" href="/tags/automotive/" rel="tag">automotive</a>, <a class="p-category" href="/tags/security/" rel="tag">security</a>
     </div>
 
 
@@ -238,16 +242,16 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=autonomous vehicle security model"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=autonomous vehicle security model"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=autonomous vehicle security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=autonomous vehicle security model&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=autonomous vehicle security model"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=automotive security model"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=automotive security model"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=automotive security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=automotive security model"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=automotive security model&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=automotive security model"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
