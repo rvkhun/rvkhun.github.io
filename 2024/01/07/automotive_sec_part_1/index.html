@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="This document covers the overall content of autonomous vehicles security. We first explore the general security threats and security solutions associated with autonomous vehicle services. Subsequently">
+<meta property="og:type" content="article">
+<meta property="og:title" content="autonomous vehicle security model">
+<meta property="og:url" content="http://example.com/2024/01/07/automotive_sec_part_1/index.html">
+<meta property="og:site_name" content="rvkhunLab">
+<meta property="og:description" content="This document covers the overall content of autonomous vehicles security. We first explore the general security threats and security solutions associated with autonomous vehicle services. Subsequently">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/2c4513a9-302b-4274-9598-160193c60a8d">
+<meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/76743931-d1a1-4eb0-b1aa-e24883d4743b">
+<meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/baad91c4-baa2-4583-b3ab-fba8531dd319">
+<meta property="og:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/efebce27-f488-4a81-9f20-2956bbbb7363">
+<meta property="article:published_time" content="2024-01-07T09:35:27.000Z">
+<meta property="article:modified_time" content="2024-01-07T09:35:41.763Z">
+<meta property="article:author" content="rvkhun">
+<meta property="article:tag" content="automotive, security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/2c4513a9-302b-4274-9598-160193c60a8d">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>autonomous vehicle security model</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/09/17/test/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=autonomous vehicle security model"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=autonomous vehicle security model"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=autonomous vehicle security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=autonomous vehicle security model&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=autonomous vehicle security model"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#background"><span class="toc-number">1.</span> <span class="toc-text">background</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#autonomous-vehicle-services-security"><span class="toc-number"></span> <span class="toc-text">autonomous vehicle services security</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#services"><span class="toc-number">1.</span> <span class="toc-text">services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security-threats-by-services"><span class="toc-number">2.</span> <span class="toc-text">security threats by services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security-solutions-by-services"><span class="toc-number">3.</span> <span class="toc-text">security solutions by services</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#in-vehicle-security"><span class="toc-number"></span> <span class="toc-text">in-vehicle security</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vehicle-architecture"><span class="toc-number">1.</span> <span class="toc-text">vehicle architecture</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-vehicle-threat-scenario-attack-and-prevent"><span class="toc-number">2.</span> <span class="toc-text">in-vehicle threat scenario :: attack and prevent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">3.</span> <span class="toc-text">reference</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        autonomous vehicle security model
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">rvkhun</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-07T09:35:27.000Z" class="dt-published" itemprop="datePublished">2024-01-07</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/automotive-security/" rel="tag">automotive, security</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>This document covers the overall content of autonomous vehicles security. We first explore the general security threats and security solutions associated with autonomous vehicle services. Subsequently, we examine security attacks on vehicles and response strategies through various scenarios.</p>
+<h3 id="background"><a href="#background" class="headerlink" title="background"></a>background</h3><p>As the software that constitutes automobiles advances and communication interfaces increase, there is a simultaneous trend of growing vulnerabilities within the software, accompanied by an escalation in cybersecurity threats. The safety of vehicles is intricately linked not only to the well-being of drivers and passengers but also to the overall safety of everything on the road. Consequently, a robust defense strategy against cyber attacks targeting automobiles is essential.</p>
+<h2 id="autonomous-vehicle-services-security"><a href="#autonomous-vehicle-services-security" class="headerlink" title="autonomous vehicle services security"></a>autonomous vehicle services security</h2><h3 id="services"><a href="#services" class="headerlink" title="services"></a>services</h3><p><img src="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/2c4513a9-302b-4274-9598-160193c60a8d" alt="image"></p>
+<p>The services provided by autonomous vehicles are as depicted in the above diagram. Notably, there are autonomous shuttles, on-demand services, and delivery services where a driver is not required. Additionally, there are cluster driving services and assistants that enhance driver convenience during travel.</p>
+<p>In the process of delivering these services, communication takes place between the vehicle and backend infrastructure. Shuttles, on-demand services, and delivery services transmit various vehicle information to the backend infrastructure, receiving necessary data to provide their services. Furthermore, cluster driving and assistant services facilitate information sharing among vehicles through inter-vehicle communication.</p>
+<h3 id="security-threats-by-services"><a href="#security-threats-by-services" class="headerlink" title="security threats by services"></a>security threats by services</h3><p>Autonomous vehicle services can be divided into three categories: in-vehicle security, backend infrastructure security, and communication channel security.</p>
+<p><img src="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/76743931-d1a1-4eb0-b1aa-e24883d4743b" alt="image"></p>
+<p>The diagram illustrates the potential security threats in autonomous vehicles.</p>
+<p>During communication between the vehicle and the backend infrastructure, attackers can eavesdrop and manipulate data. They can also perform direct attacks on the backend infrastructure, such as DoS attacks.</p>
+<p>Regarding vehicles, attackers can eavesdrop or manipulate data transmitted through the vehicle control unit’s interface, or tamper with update packages.</p>
+<p>In terms of communication channels, there are various segments such as vehicle-to-vehicle, vehicle-to-backend infrastructure, backend-to-backend, etc., due to connectivity technologies. This diversity in service types increases the range of attack vectors.</p>
+<h3 id="security-solutions-by-services"><a href="#security-solutions-by-services" class="headerlink" title="security solutions by services"></a>security solutions by services</h3><p><img src="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/baad91c4-baa2-4583-b3ab-fba8531dd319" alt="image"></p>
+<p>The applicable security technologies for each area of threat can be summarized as depicted in the above diagram.</p>
+<p>Firmware tampering in vehicles can be prevented through security technologies such as HSM, Secure Boot, Secure Debug, and Secure Flash. Additionally, utilizing Secure Access helps prevent threats like remote control and forced manipulation of the vehicle.</p>
+<p>For backend infrastructure, threats like information leakage and privilege escalation can be mitigated by implementing security technologies such as Firewall, Access Control, and DB Encryption.</p>
+<p>Attacks on communication channels, such as eavesdropping, tampering, and denial, can be thwarted through communication security technologies like IPSec and TLS.</p>
+<h2 id="in-vehicle-security"><a href="#in-vehicle-security" class="headerlink" title="in-vehicle security"></a>in-vehicle security</h2><p>If we have examined security from an overall structural perspective of autonomous vehicle services so far, let’s now delve into the <strong>in-vehicle</strong> domain in more detail.</p>
+<h3 id="vehicle-architecture"><a href="#vehicle-architecture" class="headerlink" title="vehicle architecture"></a>vehicle architecture</h3><p><img src="https://github.com/rvkhun/rvkhun.github.io/assets/111626450/efebce27-f488-4a81-9f20-2956bbbb7363" alt="image"></p>
+<p>The criteria are divided into three parts: “Vehicle Exterior,” “Vehicle Interfaces,” and “Vehicle Interior.”</p>
+<ol>
+<li><strong>Vehicle Exterior:</strong><ul>
+<li>Refers to external entities or services that communicate with the vehicle, such as backend infrastructure and diagnostic devices.</li>
+</ul>
+</li>
+<li><strong>Vehicle Interfaces:</strong><ul>
+<li>The data transmission channels enabling communication between the vehicle exterior and interior. Most attacks targeting a vehicle remotely occur through these interfaces. Key attack vectors include WI-FI, GPS, USB, BT, OBD, and others.</li>
+</ul>
+</li>
+<li><strong>Vehicle Interior:</strong><ul>
+<li>Refers to the network consisting of ECU controllers, sensors, etc., that allows services to be applied based on data received from the external environment.</li>
+</ul>
+</li>
+</ol>
+<h3 id="in-vehicle-threat-scenario-attack-and-prevent"><a href="#in-vehicle-threat-scenario-attack-and-prevent" class="headerlink" title="in-vehicle threat scenario :: attack and prevent"></a>in-vehicle threat scenario :: attack and prevent</h3><p>The following scenario explains security threats and security technologies related to vehicles through a specific example.</p>
+<p>An attacker may attempt to inject tampered firmware into a vehicle using diagnostic tools or over-the-air (OTA) functionality. If the firmware is compromised, the attacker can control the vehicle by sending messages from the external environment to the manipulated firmware.</p>
+<p>The attack sequence is as follows:</p>
+<ol>
+<li>Access the controller to analyze the firmware.</li>
+<li>Tamper with the firmware based on the analysis.</li>
+<li>Inject the tampered firmware.</li>
+<li>Execute the injected firmware.</li>
+<li>Take control of the vehicle.</li>
+</ol>
+<p>In this scenario, to prevent unauthorized access to the controller for firmware analysis, <strong>secure debug</strong> can effectively block access by unauthenticated entities.</p>
+<p>Additionally, to thwart the injection of tampered firmware, two methods are diagnostic tools and OTA. For OTA, <strong>encryption communication</strong> between the vehicle and the update backend, along with <strong>signature verification</strong> within the vehicle, can prevent tampered firmware. In the case of diagnostic tool access, enforcing access only for authorized devices or users through <strong>secure access</strong> can act as a barrier.</p>
+<p>Even if an attacker manages to inject tampered firmware, the use of <strong>secure boot</strong> during the firmware execution stage can alleviate security threats by conducting integrity checks on the firmware.</p>
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.kisa.or.kr/2060205/form?postSeq=14&page=1">https://www.kisa.or.kr/2060205/form?postSeq=14&amp;page=1</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#background"><span class="toc-number">1.</span> <span class="toc-text">background</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#autonomous-vehicle-services-security"><span class="toc-number"></span> <span class="toc-text">autonomous vehicle services security</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#services"><span class="toc-number">1.</span> <span class="toc-text">services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security-threats-by-services"><span class="toc-number">2.</span> <span class="toc-text">security threats by services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security-solutions-by-services"><span class="toc-number">3.</span> <span class="toc-text">security solutions by services</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#in-vehicle-security"><span class="toc-number"></span> <span class="toc-text">in-vehicle security</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vehicle-architecture"><span class="toc-number">1.</span> <span class="toc-text">vehicle architecture</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-vehicle-threat-scenario-attack-and-prevent"><span class="toc-number">2.</span> <span class="toc-text">in-vehicle threat scenario :: attack and prevent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">3.</span> <span class="toc-text">reference</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/07/automotive_sec_part_1/&text=autonomous vehicle security model"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/07/automotive_sec_part_1/&is_video=false&description=autonomous vehicle security model"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=autonomous vehicle security model&body=Check out this article: http://example.com/2024/01/07/automotive_sec_part_1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/07/automotive_sec_part_1/&title=autonomous vehicle security model"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/07/automotive_sec_part_1/&name=autonomous vehicle security model&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/07/automotive_sec_part_1/&t=autonomous vehicle security model"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023-2024
+    rvkhun
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
